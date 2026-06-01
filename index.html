@@ -1,0 +1,109 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Website</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <h2 class="logo">My Portfolio</h2>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button id="themeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Hello, I'm Abhishek</h1>
+      <h2>I am a Software Developer</h2>
+      <p>
+        Passionate Python Developer skilled in FastAPI, Django, REST APIs, and modern backend development.Interested in backend development, AI-powered applications, and problem-solving. Dedicated to continuous learning and delivering high-quality software solutions.
+      </p>
+
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume" class="resume-section">
+    <h2>My Resume</h2>
+
+    <div class="resume-box">
+      <p>
+        Add your resume PDF file inside your project folder and rename it as:
+        <strong>resume.pdf</strong>
+      </p>
+
+      <a href="jan bill.pdf" download class="btn">
+        Download Resume
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+
+    <form id="contactForm">
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Enter Your Name"
+        required
+      />
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter Your Email"
+        required
+      />
+
+      <input
+        type="tel"
+        id="phone"
+        placeholder="Enter Your Phone Number"
+        required
+      />
+
+      <textarea
+        id="message"
+        placeholder="Enter Your Message"
+        rows="5"
+        required
+      ></textarea>
+
+      <button type="submit" class="btn">
+        Submit
+      </button>
+
+    </form>
+
+    <p id="status"></p>
+  </section>
+
+  <footer>
+    <p>© 2026 Abhishek | Portfolio Website</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

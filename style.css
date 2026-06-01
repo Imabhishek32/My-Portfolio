@@ -1,0 +1,306 @@
+/* ========================= */
+/* MODERN PROFESSIONAL PORTFOLIO CSS */
+/* ========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+/* ========================= */
+/* COLOR VARIABLES */
+/* ========================= */
+
+:root{
+
+  /* Light Theme */
+  --bg:#f5f7fb;
+  --text:#1e293b;
+  --card:#ffffff;
+  --primary:#6366f1;
+  --secondary:#8b5cf6;
+  --hover:#4f46e5;
+  --border:#e2e8f0;
+  --shadow:0 10px 25px rgba(0,0,0,0.08);
+
+}
+
+body.dark{
+
+  /* Dark Theme */
+  --bg:#0f172a;
+  --text:#f8fafc;
+  --card:#1e293b;
+  --primary:#38bdf8;
+  --secondary:#818cf8;
+  --hover:#0ea5e9;
+  --border:#334155;
+  --shadow:0 10px 25px rgba(0,0,0,0.4);
+
+}
+
+/* ========================= */
+/* BODY */
+/* ========================= */
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  transition:0.4s ease;
+  scroll-behavior:smooth;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+header{
+  width:100%;
+  padding:18px 8%;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom:1px solid var(--border);
+}
+
+body.dark header{
+  background:rgba(15,23,42,0.8);
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:1.8rem;
+  font-weight:700;
+  color:var(--primary);
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:25px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+  transition:0.3s;
+  position:relative;
+}
+
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  width:0%;
+  height:2px;
+  left:0;
+  bottom:-5px;
+  background:var(--primary);
+  transition:0.3s;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+.nav-links a:hover{
+  color:var(--primary);
+}
+
+/* Theme Button */
+
+#themeToggle{
+  padding:10px 18px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:white;
+  font-weight:600;
+  transition:0.3s;
+}
+
+#themeToggle:hover{
+  transform:translateY(-2px);
+  opacity:0.9;
+}
+
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+
+.hero{
+  min-height:90vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero-content{
+  max-width:800px;
+}
+
+.hero-content h1{
+  font-size:4rem;
+  font-weight:700;
+}
+
+.hero-content h2{
+  font-size:2rem;
+  margin:15px 0;
+  color:var(--primary);
+}
+
+.hero-content p{
+  font-size:1.05rem;
+  line-height:1.8;
+  margin-top:15px;
+  color:#64748b;
+}
+
+body.dark .hero-content p{
+  color:#cbd5e1;
+}
+
+/* Buttons */
+
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 30px;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:white;
+  text-decoration:none;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+  box-shadow:var(--shadow);
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  opacity:0.95;
+}
+
+/* ========================= */
+/* RESUME SECTION */
+/* ========================= */
+
+.resume-section{
+  padding:100px 10%;
+  text-align:center;
+}
+
+.resume-section h2{
+  font-size:2.5rem;
+}
+
+.resume-box{
+  background:var(--card);
+  padding:45px;
+  border-radius:18px;
+  margin-top:40px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+
+/* ========================= */
+/* CONTACT SECTION */
+/* ========================= */
+
+.contact-section{
+  padding:100px 10%;
+}
+
+.contact-section h2{
+  text-align:center;
+  font-size:2.5rem;
+  margin-bottom:50px;
+}
+
+form{
+  max-width:650px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+input,
+textarea{
+  padding:16px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  outline:none;
+  background:var(--card);
+  color:var(--text);
+  transition:0.3s;
+}
+
+input:focus,
+textarea:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 4px rgba(99,102,241,0.15);
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+  text-align:center;
+  padding:25px;
+  background:var(--card);
+  margin-top:60px;
+  border-top:1px solid var(--border);
+}
+
+/* ========================= */
+/* RESPONSIVE DESIGN */
+/* ========================= */
+
+@media(max-width:768px){
+
+  nav{
+    flex-direction:column;
+    gap:18px;
+  }
+
+  .nav-links{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-content h1{
+    font-size:2.5rem;
+  }
+
+  .hero-content h2{
+    font-size:1.5rem;
+  }
+
+  .hero-content p{
+    font-size:0.95rem;
+  }
+
+  .resume-section,
+  .contact-section{
+    padding:70px 6%;
+  }
+
+}
