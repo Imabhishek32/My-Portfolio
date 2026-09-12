@@ -1,0 +1,145 @@
+
+
+:root{
+    --accent-violet:#7c3aed;
+    --accent-cyan:#22d3ee;
+    --glow-blue:rgba(13,110,253,0.45);
+    --glow-violet:rgba(124,58,237,0.40);
+    --glow-cyan:rgba(34,211,238,0.35);
+}
+
+
+#home{
+    position:relative;
+    overflow:hidden;
+}
+
+#hero-canvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    display:block;
+    z-index:0;
+    pointer-events:none;
+}
+
+#home .container{
+    position:relative;
+    z-index:1;
+}
+
+
+.hero .col-lg-6.text-center{
+    position:relative;
+}
+
+.hero img{
+    position:relative;
+    z-index:1;
+    animation:photoGlow 6s ease-in-out infinite;
+}
+
+@keyframes photoGlow{
+    0%,100%{
+        box-shadow:
+            0 10px 30px rgba(0,0,0,.2),
+            0 0 45px var(--glow-blue);
+    }
+    50%{
+        box-shadow:
+            0 10px 30px rgba(0,0,0,.2),
+            0 0 65px var(--glow-violet);
+    }
+}
+
+
+
+.tilt-ready{
+    transform-style:preserve-3d;
+    will-change:transform;
+    transition:transform .12s ease-out, box-shadow .3s ease;
+    position:relative;
+}
+
+.tilt-ready::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:radial-gradient(
+        420px circle at var(--mx,50%) var(--my,50%),
+        var(--glow-blue),
+        transparent 60%
+    );
+    opacity:0;
+    transition:opacity .3s ease;
+    pointer-events:none;
+    z-index:0;
+}
+
+.tilt-ready:hover::before{
+    opacity:1;
+}
+
+.tilt-ready > *{
+    position:relative;
+    z-index:1;
+}
+
+.project-card.tilt-ready::before{
+    background:radial-gradient(
+        420px circle at var(--mx,50%) var(--my,50%),
+        var(--glow-violet),
+        transparent 60%
+    );
+}
+
+.tilt-ready:hover{
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.25),
+        0 0 0 1px var(--glow-cyan);
+}
+
+/* ----------------------------------------------------------
+   BUTTON DEPTH
+   Subtle pressed / lifted 3D feedback on existing buttons.
+---------------------------------------------------------- */
+
+.btn{
+    transform-style:preserve-3d;
+}
+
+.btn:active{
+    transform:translateY(0) scale(.97);
+}
+
+.btn-primary:hover,
+.btn-success:hover{
+    box-shadow:0 10px 25px var(--glow-blue);
+}
+
+.btn-outline-primary:hover{
+    box-shadow:0 10px 25px var(--glow-violet);
+}
+
+
+
+@media (prefers-reduced-motion: reduce){
+    .hero img{
+        animation:none;
+    }
+    .tilt-ready{
+        transition:none;
+    }
+    #hero-canvas{
+        display:none;
+    }
+}
+
+@media(max-width:768px){
+    /* Keep the 3D scene light on small screens */
+    #hero-canvas{
+        opacity:.6;
+    }
+}

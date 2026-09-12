@@ -133,14 +133,14 @@ body{
     white-space:nowrap;
     background:var(--primary);
     color:#fff;
-    padding:10px;
+    padding:15px;
     font-size:18px;
     font-weight:600;
 }
 
 .marquee span{
     display:inline-block;
-    animation:marquee 15s linear infinite;
+    animation:marquee 10s linear infinite;
 }
 
 @keyframes marquee{

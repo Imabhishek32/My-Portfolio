@@ -63,9 +63,8 @@ loadTheme();
 const roles = [
     "Python Developer",
     "Django | FastAPI Developer",
-    "Agentic AI Developer",
-    "Web Developer",
-    "Backend Developer"
+    "Backend Developer",
+    "Build a Custom AI Chatbot"
 ];
 
 let roleIndex = 0;
