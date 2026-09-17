@@ -11,6 +11,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
+<!-- Devicon: technology icons used in the 3D skills section -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
+
 <link rel="stylesheet" href="style-3d.css">
 
 </head>
@@ -22,8 +25,27 @@
 
 <div class="container">
 
-<a class="navbar-brand fw-bold" href="#">
-Abhishek
+<a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+
+<!-- 3D LOGO MARK: Python + AI + Backend, added for the 3D enhancement -->
+<span class="logo-mark" aria-hidden="true">
+<svg viewBox="0 0 40 40" width="34" height="34">
+<defs>
+<linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0d6efd"/>
+<stop offset="1" stop-color="#7c3aed"/>
+</linearGradient>
+</defs>
+<polygon points="20,2 36,11 36,29 20,38 4,29 4,11"
+fill="none" stroke="url(#logoGrad)" stroke-width="2"/>
+<path d="M13 15c0-3 2-5 5-5h1v3h-1c-1.2 0-2 .8-2 2v1h4v3h-4v1c0 1.2.8 2 2 2h1v3h-1c-3 0-5-2-5-5z"
+fill="url(#logoGrad)" opacity="0.9"/>
+<circle cx="27" cy="14" r="2.1" fill="#22d3ee"/>
+<circle cx="27" cy="26" r="2.1" fill="#22d3ee"/>
+<line x1="27" y1="16" x2="27" y2="24" stroke="#22d3ee" stroke-width="1.4"/>
+</svg>
+</span>
+<span class="logo-text">Abhishek</span>
 </a>
 
 <button class="navbar-toggler"
@@ -47,6 +69,10 @@ data-bs-target="#menu">
 <li class="nav-item">
 <a class="nav-link" href="#skills">Skills</a>
 </li>
+
+<!-- <li class="nav-item">
+<a class="nav-link" href="#architecture">Architecture</a>
+</li> -->
 
 <li class="nav-item">
 <a class="nav-link" href="#projects">Projects</a>
@@ -117,7 +143,7 @@ Python Developer
 Passionate Python Developer skilled in FastAPI, Django, REST APIs, and modern backend development.Interested in backend development, AI-powered applications, and problem-solving. Dedicated to continuous learning and delivering high-quality software solutions.
 </p>
 
-<a href="AbhisekCV2026.pdf"
+<a href="AbhishekCV2026.pdf"
 download
 class="btn btn-primary me-3">
 Download Resume
@@ -177,6 +203,7 @@ JavaScript • Bootstrap • Git & GitHub • REST API
 About Me
 </h2>
 
+<div class="about-panel">
 <p class="text-center">
 <!-- I am a Python Developer passionate about
 building responsive web applications and
@@ -187,6 +214,7 @@ Customer-focused Software & Support Engineer with 2+ year of experience building
 technical design, automation, troubleshooting, and cross-functional collaboration.
 
 </p>
+</div>
 
 </div>
 
@@ -206,75 +234,95 @@ Skills
 
 <div class="col-md-3">
 <div class="card skill-card p-4 text-center">
+<i class="devicon-python-plain colored skill-icon"></i>
 Python
 </div>
 </div>
 
 <div class="col-md-3">
 <div class="card skill-card p-4 text-center">
+<i class="devicon-django-plain colored skill-icon"></i>
 Django
 </div>
 </div>
 
 <div class="col-md-3">
 <div class="card skill-card p-4 text-center">
+<i class="fas fa-plug skill-icon skill-icon-fa"></i>
 RestAPIs
 </div>
 </div>
 
 <div class="col-md-3">
 <div class="card skill-card p-4 text-center">
+<i class="devicon-mysql-plain colored skill-icon"></i>
 SQL
 </div>
 </div>
 
 <div class="col-md-3">
 <div class="card skill-card p-4 text-center">
+<i class="devicon-postgresql-plain colored skill-icon"></i>
 Postgresql
 </div>
 </div>
 
 <div class="col-md-3">
 <div class="card skill-card p-4 text-center">
+<i class="devicon-flask-original colored skill-icon"></i>
 Flask
 </div>
 </div>
 
 <div class="col-md-3">
 <div class="card skill-card p-4 text-center">
+<i class="devicon-fastapi-plain colored skill-icon"></i>
 FastAPI
 </div>
 </div>
 
 <div class="col-md-3">
 <div class="card skill-card p-4 text-center">
+<i class="fas fa-brain skill-icon skill-icon-fa"></i>
 RAG | LLM
 </div>
 </div>
 
 <div class="col-md-3">
 <div class="card skill-card p-4 text-center">
+<i class="fas fa-globe skill-icon skill-icon-fa"></i>
 Web development
 </div>
 </div>
 
 <div class="col-md-3">
 <div class="card skill-card p-4 text-center">
+<i class="devicon-docker-plain colored skill-icon"></i>
 Docker
 </div>
 </div>
 
 <div class="col-md-3">
 <div class="card skill-card p-4 text-center">
+<i class="devicon-java-plain colored skill-icon"></i>
 Java
 </div>
 </div>
 
 <div class="col-md-3">
 <div class="card skill-card p-4 text-center">
+<i class="devicon-javascript-plain colored skill-icon"></i>
 JavaScript
 </div>
 </div>
+
+</div>
+
+</div>
+
+</section>
+
+
 
 </div>
 
@@ -295,15 +343,20 @@ Projects
 <div class="row g-4">
 
 <div class="col-md-4">
-<div class="card project-card p-3">
 
+<div class="card project-card p-3">
 <h4>Bulk Automation Email</h4>
+<div class="project-badges">
+<span class="badge-tech">JavaScript</span>
+<span class="badge-tech">Google Apps Script</span>
+<span class="badge-tech">Google Sheets</span>
+</div>
 
 <p>
 Developed a Bulk Email Automation Tool using Google Sheets and Google Apps Script to automate personalized email delivery and improve efficiency streamlining client communication and reducing manual effort.
 </p>
 
-<a href="#"
+<a href="https://github.com/Imabhishek32/Automated-Bulk-Email-System-using-Google-Sheets-Apps-Script"
 class="btn btn-primary">
 GitHub
 </a>
@@ -316,11 +369,20 @@ GitHub
 
 <h4>Django To-Do list App</h4>
 
+<div class="project-badges">
+<span class="badge-tech">Python</span>
+<span class="badge-tech">Django</span>
+<span class="badge-tech">RestAPIs</span>
+<span class="badge-tech">MySql</span>
+
+
+</div>
+
 <p>
 Developed a task management application using Django that enables users to create, update, track, and delete tasks through a user-friendly interface, improving productivity and task organization.
 </p>
 
-<a href="#"
+<a href="https://github.com/Imabhishek32/Profile-To-Do-list-FastAPIs-"
 class="btn btn-primary">
 GitHub
 </a>
@@ -330,14 +392,19 @@ GitHub
 
 <div class="col-md-4">
 <div class="card project-card p-3">
-
 <h4>Quiz-Game-Application</h4>
 
+<div class="project-badges">
+<span class="badge-tech">Python</span>
+<span class="badge-tech">Django</span>
+<span class="badge-tech">Bootstrap</span>
+<span class="badge-tech">MySql</span>
+</div>
 <p>
 A responsive Quiz Web Application built using Django and Bootstrap that allows users to attempt multiple-choice questions one at a time with automatic result calculation and answer review functionality.
 </p>
 
-<a href="#"
+<a href="https://github.com/Imabhishek32/Django-Quiz-Application"
 class="btn btn-primary">
 GitHub
 </a>
@@ -392,7 +459,7 @@ Experience
 Resume
 </h2>
 
-<a href="AbhisekCV2026.pdf"
+<a href="AbhishekCV2026.pdf"
 download
 class="btn btn-success">
 Download Resume
@@ -449,14 +516,43 @@ Send Message
 
 <footer>
 
-<p>
-©2026 Abhishek | Portfolio Website | Email- Abhishekcode73@email.com
+<!-- floating particle layer + glass panel added for the 3D footer -->
+<canvas id="footer-canvas" aria-hidden="true"></canvas>
+
+<div class="footer-inner">
+
+<div class="footer-brand">
+<span class="logo-mark logo-mark-sm" aria-hidden="true">
+<svg viewBox="0 0 40 40" width="40" height="40">
+<polygon points="20,2 36,11 36,29 20,38 4,29 4,11"
+fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="2"/>
+<circle cx="20" cy="20" r="4" fill="#22d3ee"/>
+</svg>
+</span>
+Abhishek Coder
+</div>
+
+<div class="footer-links">
+<a href="mailto:abhishekcode73@gmail.com" title="Send Email">
+<i class="fas fa-envelope"></i> Abhishekcode73@email.com
+</a>
+<a href="https://github.com/Imabhishek32" target="_blank" rel="noopener">
+<i class="fab fa-github"></i> GitHub
+</a>
+<a href="https://www.linkedin.com/in/abhishek-chaurasiya-18245b272/" target="_blank" rel="noopener">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
+</div>
+
+<p class="footer-copy">
+©2026 Abhishek | Portfolio Website
 </p>
+
+</div>
 
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 <script src="script-3d.js"></script>

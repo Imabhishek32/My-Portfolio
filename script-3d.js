@@ -1,5 +1,6 @@
 
 
+
 const prefersReducedMotion =
 window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -206,7 +207,7 @@ function initHeroScene(){
 }
 
 
-//    3D TILT + GLOW ON EXISTING CARDS
+// 3D TILT + GLOW ON EXISTING CARDS
 
 
 function initCardTilt(){
@@ -253,8 +254,131 @@ function initCardTilt(){
 }
 
 
+//    FOOTER PARTICLE NETWORK
+
+
+
+function initFooterParticles(){
+
+    const canvas =
+    document.getElementById("footer-canvas");
+
+    if(!canvas || prefersReducedMotion){
+        return;
+    }
+
+    const ctx = canvas.getContext("2d");
+
+    let footer = canvas.closest("footer");
+    let width, height;
+    let particles = [];
+
+    function resize(){
+
+        width = footer.clientWidth;
+        height = footer.clientHeight;
+
+        canvas.width = width * Math.min(window.devicePixelRatio, 2);
+        canvas.height = height * Math.min(window.devicePixelRatio, 2);
+        canvas.style.width = width + "px";
+        canvas.style.height = height + "px";
+
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(
+            Math.min(window.devicePixelRatio, 2),
+            Math.min(window.devicePixelRatio, 2)
+        );
+
+    }
+
+    function makeParticles(){
+
+        const count = width < 768 ? 18 : 34;
+
+        particles = Array.from({length:count}, () => ({
+            x:Math.random() * width,
+            y:Math.random() * height,
+            vx:(Math.random() - 0.5) * 0.15,
+            vy:(Math.random() - 0.5) * 0.15,
+            r:Math.random() * 1.6 + 0.6
+        }));
+
+    }
+
+    resize();
+    makeParticles();
+
+    window.addEventListener("resize", () => {
+        resize();
+        makeParticles();
+    });
+
+    const linkDistance = 120;
+
+    function tick(){
+
+        requestAnimationFrame(tick);
+
+        ctx.clearRect(0, 0, width, height);
+
+        particles.forEach((p) => {
+
+            p.x += p.vx;
+            p.y += p.vy;
+
+            if(p.x < 0 || p.x > width) p.vx *= -1;
+            if(p.y < 0 || p.y > height) p.vy *= -1;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(34,211,238,0.55)";
+            ctx.fill();
+
+        });
+
+        for(let i = 0; i < particles.length; i++){
+            for(let j = i + 1; j < particles.length; j++){
+
+                const a = particles[i];
+                const b = particles[j];
+
+                const dx = a.x - b.x;
+                const dy = a.y - b.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if(dist < linkDistance){
+
+                    ctx.beginPath();
+                    ctx.moveTo(a.x, a.y);
+                    ctx.lineTo(b.x, b.y);
+                    ctx.strokeStyle =
+                        `rgba(124,58,237,${0.35 * (1 - dist / linkDistance)})`;
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+
+                }
+
+            }
+        }
+
+    }
+
+    tick();
+
+}
+
+
 //    INIT
 
 
 initHeroScene();
 initCardTilt();
+initFooterParticles();
+
+
+
+
+
+
+
+
